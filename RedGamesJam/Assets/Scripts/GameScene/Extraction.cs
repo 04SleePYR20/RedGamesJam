@@ -13,7 +13,7 @@ public class Extraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (pu.itemName != null)
+        if (pu.pickedUp)
         {
             SceneManager.LoadScene(scene);
         }

@@ -6,6 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     float movementSpeed = 2f;
+
+    [SerializeField]
+    float rotationSpeed = 16f;
+
     [SerializeField]
     Joystick joystick;
 
@@ -21,13 +25,28 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
         movementDirection = new Vector2(joystick.Horizontal, joystick.Vertical);
     }
 
     private void FixedUpdate()
     {
+        SetVelocity();
+        RotateInDirectionOfInput();
+    }
+
+    private void SetVelocity()
+    {
         rb.velocity = movementDirection * movementSpeed;
+    }
+
+    private void RotateInDirectionOfInput()
+    {
+        if (movementDirection != Vector2.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, movementDirection);
+            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            rb.MoveRotation(rotation);
+        }
     }
 }
