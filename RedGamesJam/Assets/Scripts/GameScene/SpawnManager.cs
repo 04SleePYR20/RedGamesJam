@@ -17,18 +17,18 @@ public class SpawnManager : MonoBehaviour
     float _randomAngle; // Added to store the random angle for spawn direction.
 
 
-    //void Start()
-    //{
-    //    Spawn();
-    //}
-
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Spawn();
-        }
+        Spawn();
     }
+
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        Spawn();
+    //    }
+    //}
 
     void Spawn()
     {
