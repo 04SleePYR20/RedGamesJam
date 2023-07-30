@@ -13,9 +13,13 @@ public class Extraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (pu.pickedUp)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(scene);
+            if (pu.pickedUp)
+            {
+                collision.gameObject.SetActive(false);
+                SceneManager.LoadScene(scene);
+            }
         }
     }
 }

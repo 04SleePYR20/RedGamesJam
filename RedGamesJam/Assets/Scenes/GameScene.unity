@@ -346,7 +346,7 @@ MonoBehaviour:
   _offsetX: 15
   _offsetY: 25
   _spawnDistance: 1
-  _chanceOfDoubleSpawn: 0
+  _chanceOfDoubleSpawn: 1
 --- !u!4 &334554028
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,6 +1072,7 @@ GameObject:
   - component: {fileID: 1626198484}
   - component: {fileID: 1626198482}
   - component: {fileID: 1626198486}
+  - component: {fileID: 1626198487}
   m_Layer: 0
   m_Name: Circle (item1)
   m_TagString: Item
@@ -1193,6 +1194,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1626198487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626198480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cba03ef8533d0d43b0857c0544017cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2027323928}
+  speed: 10
+  distanceBetween: 1
 --- !u!1 &1642030453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,6 +1959,7 @@ GameObject:
   - component: {fileID: 1936487285}
   - component: {fileID: 1936487288}
   - component: {fileID: 1936487287}
+  - component: {fileID: 1936487289}
   m_Layer: 0
   m_Name: Isometric Diamond (item2)
   m_TagString: Item
@@ -2054,6 +2071,21 @@ CircleCollider2D:
   m_Offset: {x: -0.000000071951526, y: 0}
   serializedVersion: 2
   m_Radius: 0.9760563
+--- !u!114 &1936487289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936487284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cba03ef8533d0d43b0857c0544017cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2027323928}
+  speed: 10
+  distanceBetween: 1
 --- !u!1 &1982341520
 GameObject:
   m_ObjectHideFlags: 0

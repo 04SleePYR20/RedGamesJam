@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public List<GameObject> itemsOnScene = new List<GameObject>();
     //[HideInInspector]
     public List<GameObject> itemsCollected = new List<GameObject>();
@@ -15,7 +15,8 @@ public class PickUp : MonoBehaviour
 
     private void Start()
     {
-        itemsCollected.Clear();
+        DontDestroyOnLoad(gameObject);
+        //itemsCollected.Clear();
         itemsOnScene.AddRange(GameObject.FindGameObjectsWithTag("Item"));
     }
 
@@ -26,10 +27,13 @@ public class PickUp : MonoBehaviour
             for (int i = 0; i < itemsOnScene.Count; i++)
             {
                 if (collision.gameObject == itemsOnScene[i])
-                {
+                {                    
                     itemsCollected.Add(itemsOnScene[i]);
+
                     pickedUp = true;
-                    collision.gameObject.SetActive(false);
+                    //Destroy(collision.gameObject);
+                    //collision.gameObject.SetActive(false);
+
                     break;
                 }
             }
