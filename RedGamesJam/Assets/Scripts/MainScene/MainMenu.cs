@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Animator transition;
+
+    public float transitionTime = 1f;
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);
+        
+        StartCoroutine(LoadLevel());
     }
 
     public void Exit()
@@ -16,5 +20,12 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    IEnumerator LoadLevel()
+    {
+        transition.SetTrigger("Start");
 
+        yield return new WaitForSeconds(5);
+
+        SceneManager.LoadScene(2);
+    }
 }
